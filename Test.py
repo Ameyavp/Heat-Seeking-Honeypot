@@ -3,7 +3,7 @@ import re
 import os
 from bs4 import BeautifulSoup
 
-url='https://www.google.co.in/'
+url='https://www.facebook.com/'
 url_arr = re.split('\W+', url)
 file_path = "index.html"
 dir_name = ""
@@ -24,7 +24,7 @@ f = open(file_path, 'r+')
 content = f.read()
 soup = BeautifulSoup(content)
 for link in soup.find_all('a'):
-    new_tag = soup.new_tag("a", href="https:///www.google.co.in/")
+    new_tag = soup.new_tag("a", href="https://www.facebook.com/")
     new_tag.string = "Replaced"
     link.replace_with(new_tag);
 f.seek(0)
